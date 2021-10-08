@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.btn {
+  display: inline-block;
+  margin: 20px 5px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: hsl(175, 49%, 42%);
+  position: relative;
+}
+
+.tooltip::before {
+  color: #000;
+  z-index: 1;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background-color: hsla(45, 82%, 64%, .9);
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  display: none;
+}
+.tooltip:hover::before {
+  display: inline-block;
+}
+
+button::before {
+  content: attr(data-tooltip);
+}
